@@ -19,7 +19,6 @@ export const POST = async (
     const course = await db.course.findUnique({
       where: {
         id: courseId,
-        instructorId: userId,
       },
     });
 
@@ -54,6 +53,8 @@ export const POST = async (
         isCompleted,
       },
     });
+
+    console.log(sectionId, userId, isCompleted);
 
     return NextResponse.json(progress, { status: 200 });
   } catch (err) {
