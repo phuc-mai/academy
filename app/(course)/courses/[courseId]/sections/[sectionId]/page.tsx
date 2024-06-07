@@ -1,5 +1,4 @@
 import SectionsDetails from "@/components/sections/SectionsDetails";
-import { Button } from "@/components/ui/button";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 import { Resource } from "@prisma/client";
@@ -21,6 +20,13 @@ const SectionDetailsPage = async ({
     where: {
       id: courseId,
       isPublished: true,
+    },
+    include: {
+      sections: {
+        where: {
+          isPublished: true,
+        },
+      },
     },
   });
 

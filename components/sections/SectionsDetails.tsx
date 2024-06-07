@@ -18,9 +18,10 @@ import ReadText from "@/components/custom/ReadText";
 import MuxPlayer from "@mux/mux-player-react";
 import Link from "next/link";
 import ProgressButton from "./ProgressButton";
+import SectionMenu from "../layout/SectionMenu";
 
 interface SectionsDetailsProps {
-  course: Course;
+  course: Course & { sections: Section[] };
   section: Section;
   purchase: Purchase | null;
   muxData: MuxData | null;
@@ -56,21 +57,25 @@ const SectionsDetails = ({
     <div className="px-6 py-4 flex flex-col gap-5">
       <div className="flex flex-col md:flex-row md:justify-between md:items-center">
         <h1 className="text-2xl font-bold max-md:mb-4">{section.title}</h1>
-        {!purchase ? (
-          <Button onClick={buyCourse}>
-            {isLoading ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              <p>Buy this course</p>
-            )}
-          </Button>
-        ) : (
-          <ProgressButton
-            courseId={course.id}
-            sectionId={section.id}
-            isCompleted={!!progress?.isCompleted}
-          /> // !! converts falsy values to boolean false
-        )}
+
+        <div className="flex">
+          <SectionMenu course={course} />
+          {!purchase ? (
+            <Button onClick={buyCourse}>
+              {isLoading ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : (
+                <p>Buy this course</p>
+              )}
+            </Button>
+          ) : (
+            <ProgressButton
+              courseId={course.id}
+              sectionId={section.id}
+              isCompleted={!!progress?.isCompleted}
+            /> // !! converts falsy values to boolean false
+          )}
+        </div>
       </div>
 
       <ReadText value={section.description!} />
