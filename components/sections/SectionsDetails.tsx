@@ -93,6 +93,7 @@ const SectionsDetails = ({
         <h2 className="text-xl font-bold mb-5">Resources</h2>
         {resources.map((resource) => (
           <Link
+            key={resource.id}
             href={resource.fileUrl}
             target="_blank"
             className="flex items-center bg-[#FFF8EB] rounded-lg text-sm font-medium p-3"

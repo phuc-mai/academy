@@ -92,7 +92,7 @@ const ResourceForm = ({ section, courseId }: ResourceFormProps) => {
 
       <div className="mt-5 flex flex-col gap-5">
         {section.resources.map((resource) => (
-          <div className="flex justify-between bg-[#FFF8EB] rounded-lg text-sm font-medium p-3">
+          <div key={resource.id} className="flex justify-between bg-[#FFF8EB] rounded-lg text-sm font-medium p-3">
             <div className="flex items-center">
               <File className="h-4 w-4 mr-4" />
               {resource.name}
