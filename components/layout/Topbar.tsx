@@ -79,7 +79,7 @@ const Topbar = () => {
           ))}
         </div>
 
-        <div className="w-full max-w-[200px] z-20 sm:hidden">
+        <div className="z-20 sm:hidden">
           <Sheet>
             <SheetTrigger>
               <Menu className="w-5 h-5" />

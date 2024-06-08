@@ -10,7 +10,7 @@ interface SectionMenuProps {
 
 const SectionMenu = ({ course }: SectionMenuProps) => {
   return (
-    <div className="w-full max-w-[200px] z-60 md:hidden">
+    <div className="z-60 md:hidden">
       <Sheet>
         <SheetTrigger>
           <Button>Sections</Button>

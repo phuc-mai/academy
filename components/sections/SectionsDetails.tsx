@@ -58,7 +58,7 @@ const SectionsDetails = ({
       <div className="flex flex-col md:flex-row md:justify-between md:items-center">
         <h1 className="text-2xl font-bold max-md:mb-4">{section.title}</h1>
 
-        <div className="flex">
+        <div className="flex gap-4">
           <SectionMenu course={course} />
           {!purchase ? (
             <Button onClick={buyCourse}>

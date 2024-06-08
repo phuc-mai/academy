@@ -121,7 +121,7 @@ model Resource {
 
 model Progress {
   id        String @id @default(uuid())
-  studentId String @unique
+  studentId String 
 
   sectionId String
   section   Section @relation(fields: [sectionId], references: [id], onDelete: Cascade)
