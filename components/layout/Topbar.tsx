@@ -47,18 +47,18 @@ const Topbar = () => {
   return (
     <div className="flex justify-between items-center p-4">
       <Link href="/">
-        <Image src="/logo.png" height={100} width={200} alt="logo" />
+         <p>Eart of Learning</p>
       </Link>
 
       <div className="max-md:hidden w-[400px] rounded-full flex">
         <input
-          className="flex-grow bg-[#FFF8EB] rounded-l-full border-none outline-none text-sm pl-4 py-3"
+          className="flex-grow bg-[#EBF8FF] rounded-l-full border-none outline-none text-sm pl-4 py-3"
           placeholder="Search for courses"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <button
-          className="bg-[#FDAB04] rounded-r-full border-none outline-none cursor-pointer px-4 py-3 hover:bg-[#FDAB04]/80"
+          className="bg-[#EBF8FF] rounded-r-full border-none outline-none cursor-pointer px-4 py-3 hover:bg-[#EBF8FF]/80"
           disabled={searchInput.trim() === ""}
           onClick={handleSearch}
         >
@@ -72,7 +72,7 @@ const Topbar = () => {
             <Link
               href={route.path}
               key={route.path}
-              className="text-sm font-medium hover:text-[#FDAB04]"
+              className="text-sm font-medium hover:text-[#EBF8FF]"
             >
               {route.label}
             </Link>
@@ -90,7 +90,7 @@ const Topbar = () => {
                   <Link
                     href={route.path}
                     key={route.path}
-                    className="text-sm font-medium hover:text-[#FDAB04]"
+                    className="text-sm font-medium hover:text-[#EBF8FF]"
                   >
                     {route.label}
                   </Link>
@@ -103,7 +103,7 @@ const Topbar = () => {
                     <Link
                       href={route.path}
                       key={route.path}
-                      className="text-sm font-medium hover:text-[#FDAB04]"
+                      className="text-sm font-medium hover:text-[#EBF8FF]"
                     >
                       {route.label}
                     </Link>
