@@ -3,8 +3,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { currentUser } from "@clerk/nextjs/server";
 
 import { db } from "@/lib/db";
-import { stripe } from "@/lib/stripe";
 
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  typescript: true,
+});
+``
 export const POST = async (
   req: NextRequest,
   { params }: { params: { courseId: string } }
@@ -80,7 +83,7 @@ export const POST = async (
 
     return NextResponse.json({ url: session.url })
   } catch (err) {
-    console.log("[courseId_checkout_POST]", err);
+    console.log("[COURSE_CHECKOUT]", err);
     return new NextResponse("Internal Server Error", { status: 500 });
   }
 };
